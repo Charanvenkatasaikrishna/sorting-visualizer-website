@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <rect width="920" height="360" rx="24" fill="#111827"/>
+  <rect x="24" y="24" width="872" height="40" rx="12" fill="#1f2937"/>
+  <circle cx="50" cy="44" r="8" fill="#f87171"/>
+  <circle cx="76" cy="44" r="8" fill="#fbbf24"/>
+  <circle cx="102" cy="44" r="8" fill="#34d399"/>
+  <text x="136" y="50" font-family="Consolas, monospace" font-size="20" fill="#cbd5e1">event controls from script.js</text>
+  <text x="44" y="104" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">algorithmSelect.addEventListener("change", updateAlgorithmInfo);</text>
+  <text x="44" y="140" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">generateButton.addEventListener("click", generateNewArray);</text>
+  <text x="44" y="176" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">applyButton.addEventListener("click", parseCustomArray);</text>
+  <text x="44" y="212" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">sortButton.addEventListener("click", startSorting);</text>
+  <text x="44" y="248" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">resetButton.addEventListener("click", resetArray);</text>
+  <text x="44" y="296" font-family="Consolas, monospace" font-size="24" fill="#93c5fd">updateAlgorithmInfo();</text>
+  <text x="44" y="332" font-family="Consolas, monospace" font-size="24" fill="#93c5fd">generateNewArray();</text>
+</svg>

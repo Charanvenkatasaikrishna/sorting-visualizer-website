@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <rect width="920" height="360" rx="24" fill="#111827"/>
+  <rect x="24" y="24" width="872" height="40" rx="12" fill="#1f2937"/>
+  <circle cx="50" cy="44" r="8" fill="#f87171"/>
+  <circle cx="76" cy="44" r="8" fill="#fbbf24"/>
+  <circle cx="102" cy="44" r="8" fill="#34d399"/>
+  <text x="136" y="50" font-family="Consolas, monospace" font-size="20" fill="#cbd5e1">insertionSort snippet from script.js</text>
+  <text x="44" y="104" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">async function insertionSort() {</text>
+  <text x="44" y="140" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">  for (let i = 1; i &lt; currentArray.length; i += 1) {</text>
+  <text x="44" y="176" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">    const key = currentArray[i];</text>
+  <text x="44" y="212" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">    let j = i - 1;</text>
+  <text x="44" y="248" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">    while (j &gt;= 0 &amp;&amp; currentArray[j] &gt; key) {</text>
+  <text x="44" y="284" font-family="Consolas, monospace" font-size="24" fill="#93c5fd">      currentArray[j + 1] = currentArray[j];</text>
+  <text x="44" y="320" font-family="Consolas, monospace" font-size="24" fill="#e2e8f0">    }</text>
+</svg>
