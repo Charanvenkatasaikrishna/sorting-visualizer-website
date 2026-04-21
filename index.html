@@ -3,190 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PulsePlay | Ad-Free Local Music Player</title>
+  <title>Sorting Visualizer | DSA Project</title>
   <meta
     name="description"
-    content="PulsePlay is a free, ad-free local music player website that runs on your laptop and plays your own songs."
+    content="A DSA mini project that visualizes sorting algorithms using arrays."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="app-shell">
-    <section class="hero-card panel">
+    <section class="hero panel">
       <div class="hero-copy">
-        <p class="eyebrow">Ad-Free Music Website</p>
-        <h1>PulsePlay</h1>
-        <p class="hero-text">
-          A clean music player that runs right on your laptop. Import your own songs,
-          search instantly, build a queue, and listen without ads.
+        <p class="eyebrow">DSA Project</p>
+        <h1>Sorting Visualizer</h1>
+        <p>
+          Understand how sorting algorithms work by watching array elements
+          compare, swap, and move into the correct order step by step.
         </p>
 
-        <div class="hero-actions">
-          <label class="button button-primary" for="file-input">Add Songs</label>
-          <label class="button button-ghost" for="folder-input">Add Folder</label>
-          <button id="demo-button" class="button button-secondary" type="button">Load Free Library</button>
+        <div class="topic-tags">
+          <span>Array</span>
+          <span>Sorting Techniques</span>
+          <span>Complexity Analysis</span>
         </div>
-
-        <div class="hero-notes">
-          <span>MP3</span>
-          <span>WAV</span>
-          <span>OGG</span>
-          <span>M4A</span>
-          <span>Shuffle + Repeat</span>
-        </div>
-
-        <input id="file-input" type="file" accept="audio/*" multiple hidden>
-        <input id="folder-input" type="file" accept="audio/*" webkitdirectory directory multiple hidden>
       </div>
 
-      <div class="hero-side">
-        <article class="feature-card">
-          <span>Playback</span>
-          <strong>Play, pause, seek, skip, repeat</strong>
+      <div class="hero-summary">
+        <article class="summary-card">
+          <span>Algorithms</span>
+          <strong>Bubble, Selection, Insertion</strong>
         </article>
-        <article class="feature-card">
-          <span>Library</span>
-          <strong>Search songs and sort by title, artist, or length</strong>
+        <article class="summary-card">
+          <span>Visualization</span>
+          <strong>Live comparisons and swaps</strong>
         </article>
-        <article class="feature-card">
-          <span>Made For</span>
-          <strong>Your local files, private listening, zero ads</strong>
+        <article class="summary-card">
+          <span>Stats</span>
+          <strong>Comparisons, swaps, time complexity</strong>
         </article>
       </div>
     </section>
 
-    <section class="dashboard">
-      <section class="panel now-playing-panel">
+    <section class="workspace">
+      <section class="panel controls-panel">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Now Playing</p>
-            <h2 id="current-title">No song selected</h2>
+            <p class="eyebrow">Controls</p>
+            <h2>Build and sort your array</h2>
           </div>
-          <span id="playback-badge" class="status-pill">Idle</span>
         </div>
 
-        <div class="now-playing-grid">
-          <div class="cover-wrap">
-            <div id="cover-art" class="cover-art">
-              <span id="cover-initials">PP</span>
-            </div>
-          </div>
+        <div class="controls-grid">
+          <label class="field">
+            <span>Algorithm</span>
+            <select id="algorithm-select">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="insertion">Insertion Sort</option>
+            </select>
+          </label>
 
-          <div class="track-meta">
-            <p id="current-artist" class="meta-line">Import songs to begin.</p>
-            <p id="current-album" class="meta-line meta-line-muted">Album and file details appear here.</p>
-            <p id="current-rights" class="meta-line meta-line-muted">
-              Rights info will appear here for built-in free tracks.
-            </p>
-            <p class="rights-links">
-              <a id="source-link" href="#" target="_blank" rel="noreferrer">Source</a>
-              <a id="license-link" href="#" target="_blank" rel="noreferrer">License</a>
-            </p>
+          <label class="field">
+            <span>Array Size</span>
+            <input id="size-range" type="range" min="5" max="20" value="10">
+          </label>
 
-            <div class="progress-wrap">
-              <input id="progress-range" type="range" min="0" max="100" value="0" step="0.1">
-              <div class="time-row">
-                <span id="current-time">0:00</span>
-                <span id="duration-time">0:00</span>
-              </div>
-            </div>
+          <label class="field">
+            <span>Speed</span>
+            <input id="speed-range" type="range" min="50" max="900" step="50" value="350">
+          </label>
 
-            <div class="control-row">
-              <button id="previous-button" class="icon-button" type="button" aria-label="Previous track">Prev</button>
-              <button id="play-button" class="play-button" type="button" aria-label="Play or pause">Play</button>
-              <button id="next-button" class="icon-button" type="button" aria-label="Next track">Next</button>
-            </div>
+          <label class="field field-wide">
+            <span>Custom Array</span>
+            <input
+              id="custom-array"
+              type="text"
+              placeholder="Example: 8, 3, 5, 1, 9, 4"
+            >
+          </label>
+        </div>
 
-            <div class="utility-row">
-              <button id="shuffle-button" class="toggle-button" type="button">Shuffle Off</button>
-              <button id="repeat-button" class="toggle-button" type="button">Repeat All</button>
-              <label class="volume-wrap">
-                <span>Volume</span>
-                <input id="volume-range" type="range" min="0" max="1" value="0.85" step="0.01">
-              </label>
-            </div>
-          </div>
+        <div class="button-row">
+          <button id="generate-button" class="button button-primary" type="button">Generate Array</button>
+          <button id="apply-button" class="button button-ghost" type="button">Use Custom Array</button>
+          <button id="sort-button" class="button button-accent" type="button">Start Sorting</button>
+          <button id="reset-button" class="button button-ghost" type="button">Reset</button>
         </div>
       </section>
 
+      <section class="panel visualizer-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Visualizer</p>
+            <h2 id="visualizer-title">Bubble Sort in action</h2>
+          </div>
+          <div class="legend">
+            <span><i class="legend-dot normal"></i>Normal</span>
+            <span><i class="legend-dot compare"></i>Compare</span>
+            <span><i class="legend-dot sorted"></i>Sorted</span>
+          </div>
+        </div>
+
+        <div id="bars-container" class="bars-container" aria-label="Sorting bars"></div>
+        <div id="array-values" class="array-values"></div>
+      </section>
+
       <aside class="sidebar">
-        <section class="panel library-stats">
-          <p class="eyebrow">Your Library</p>
-          <div class="stat-grid">
+        <section class="panel stats-panel">
+          <p class="eyebrow">Statistics</p>
+          <div class="stats-grid">
             <article class="stat-card">
-              <span>Songs</span>
-              <strong id="song-count">0</strong>
+              <span>Comparisons</span>
+              <strong id="comparisons-label">0</strong>
             </article>
             <article class="stat-card">
-              <span>Total Time</span>
-              <strong id="total-duration">0 min</strong>
+              <span>Swaps</span>
+              <strong id="swaps-label">0</strong>
             </article>
             <article class="stat-card">
-              <span>Queue</span>
-              <strong id="queue-count">0</strong>
+              <span>Status</span>
+              <strong id="status-label">Ready</strong>
             </article>
             <article class="stat-card">
-              <span>Mode</span>
-              <strong id="mode-label">Normal</strong>
+              <span>Elements</span>
+              <strong id="elements-label">0</strong>
             </article>
           </div>
         </section>
 
-        <section class="panel tips-panel">
-          <p class="eyebrow">Quick Tips</p>
-          <ul class="tips-list">
-            <li>Built-in free tracks come from openly licensed or public-domain sources.</li>
-            <li>Put songs in the project's <strong>music</strong> folder to auto-load them every time.</li>
-            <li>Use <strong>Add Folder</strong> to import an entire music folder at once.</li>
-            <li>Click any track to play it immediately.</li>
-            <li>Use the search box to filter songs by title or filename.</li>
-            <li>PulsePlay does not stream copyrighted music from the internet; it plays the audio files you import.</li>
-          </ul>
+        <section class="panel explanation-panel">
+          <p class="eyebrow">Algorithm Info</p>
+          <h2 id="info-title">Bubble Sort</h2>
+          <p id="info-description" class="info-description"></p>
+          <div class="complexity-grid">
+            <article class="complexity-card">
+              <span>Best</span>
+              <strong id="best-complexity">-</strong>
+            </article>
+            <article class="complexity-card">
+              <span>Average</span>
+              <strong id="average-complexity">-</strong>
+            </article>
+            <article class="complexity-card">
+              <span>Worst</span>
+              <strong id="worst-complexity">-</strong>
+            </article>
+            <article class="complexity-card">
+              <span>Space</span>
+              <strong id="space-complexity">-</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel message-panel">
+          <p class="eyebrow">Project Note</p>
+          <p id="message-box" class="message-box">
+            Generate an array or enter your own values, then start sorting to visualize the algorithm.
+          </p>
         </section>
       </aside>
     </section>
-
-    <section class="panel library-panel">
-      <div class="section-head library-head">
-        <div>
-          <p class="eyebrow">Library</p>
-          <h2>Imported Songs</h2>
-        </div>
-
-        <div class="library-tools">
-          <label class="search-field">
-            <span class="visually-hidden">Search songs</span>
-            <input id="search-input" type="search" placeholder="Search by title, artist, album, or filename">
-          </label>
-
-          <select id="sort-select" aria-label="Sort songs">
-            <option value="title">Sort: Title</option>
-            <option value="artist">Sort: Artist</option>
-            <option value="duration">Sort: Duration</option>
-            <option value="recent">Sort: Recently Added</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="table-shell">
-        <div class="table-head">
-          <span>Track</span>
-          <span>Artist</span>
-          <span>Album / Source</span>
-          <span>Length</span>
-        </div>
-        <div id="track-list" class="track-list"></div>
-      </div>
-    </section>
   </main>
 
-  <audio id="audio-player" preload="metadata"></audio>
   <script src="script.js"></script>
 </body>
 </html>
